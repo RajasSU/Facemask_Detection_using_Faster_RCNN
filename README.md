@@ -75,6 +75,7 @@ After this, we will Configure the PYTHONPATH environment variable. PYTHONPATH is
  
  And then run the following command
  
+ 
  ```
  protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto .\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto .\object_detection\protos\calibration.proto .\object_detection\protos\flexible_grid_anchor_generator.proto
  ```
@@ -82,3 +83,76 @@ After this, we will Configure the PYTHONPATH environment variable. PYTHONPATH is
  Now finally, we will run the following to commands from the C:\tensorflow1\models\research.  The build command is used for putting all the files to install into the build directory.
  
  The TensorFlow Object Detection API is now fully configured to use pre-trained object detection models or train new models.
+ 
+ ### Step 3: Customize particular files according to our dataset.
+ 
+In this step, we will customize and tweak a few files in order to successfully run this objection detection task to identify facemask specifically. 
+ 
+At first we will edit the file named xml_to_csv.py. From line number 17 to 20 we will change int(member[4][0].text) to int(member[5][0].text)
+
+Now in the training folder (C:\tensorflow1\models\research\object_detection\training), we will delete all the pre-existing files and create a new file named labelmap.pbtxt. We will insert the following script in the labelmap file.
+
+```
+item {
+  id: 1
+  name: 'with_mask'
+}
+
+item {
+  id: 2
+  name: 'without_mask'
+}
+
+item {
+  id: 3
+  name: 'mask_weared_incorrect'
+}
+```
+
+Next, we will convert the xml into csv by using below code:
+
+```
+(tensorflow1) C:\tensorflow1\models\research\object_detection> python xml_to_csv.py
+```
+
+This will create our CSV files that are train_labels.csv and test_labels.csv
+
+Now, we will edit our generate_tfrecord.py file. we will replace the code with the following script
+
+```
+def class_text_to_int(row_label):
+    if row_label == 'with_mask':
+        return 1
+    elif row_label == 'without_mask':
+        return 2
+    elif row_label == 'mask_weared_incorrect':
+        return 3
+    else:
+        None
+```
+
+After editing it we will run the commands below to generate the TFRecord files that are train.record and test.record
+
+```
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
+```
+
+Now we are done with step 3 and will perform the complete step 4 into google collaboratory file Facemask_Detection_using_Faster_rcnn.ipynb. 
+
+### Step 4: Test the model on Anaconda Command Prompt.
+
+Once we have done training the model, we will copy all the files from the folder named  Final_Weights_Obtained saved on the google drive to our inference_graph folder stored in the object_detection folder.
+
+After that, we will edit the Object_detection_image.py file and make the following changes.
+
+  1. Change the name of the directory containing the object detection module we are using i.e. MODEL_NAME = 'inference_graph.' IMAGE_NAME = 't1.jpg'
+  
+  2. Add another line after line number 115 cv2.imwrite('output1.jpg', image)
+
+After making the following changes, we will run the python file in the Anaconda command prompt. Hence, we have successfully trained and tested the facemask detection model using faster_rcnn architecture.
+
+Cheers!!!
+
+
