@@ -33,5 +33,5 @@ In the Anaconda prompt, create a new virtual environment named â€œtensorflow1.â€
 ```C:\> conda create -n tensorflow1 pip python=3.6```
 
 Then we will activate this virtual environment.
-```C:\> activate tensorflow1
-(tensorflow1) C:\>python -m pip install --upgrade pip```
+```C:\> activate tensorflow1```
+```(tensorflow1) C:\>python -m pip install --upgrade pip```
