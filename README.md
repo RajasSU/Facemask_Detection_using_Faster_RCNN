@@ -10,7 +10,7 @@ The dataset that we will use is available on Kaggle as Face Mask Detection (http
   
 To do object detection to identify if people in the image are wearing a facemask, we will follow specific steps to obtain a fully trained model for object detection
 
-  **1. Set our TensorFlow1 Directory.
+  **1. Set our TensorFlow1 Directory.**
   
   **2. Create an Anaconda Virtual Environment.**
     
