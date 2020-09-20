@@ -17,4 +17,10 @@ To do object detection to identify if people in the image are wearing a facemask
 Test the model on Anaconda Command Prompt.
 So before starting these steps, please make sure that you have installed the Anaconda Navigator (https://www.anaconda.com/products/individual#download-section) because we will be primarily using the Anaconda virtual environment to build out the Facemask Detection model. 
 
-To Be Continue...
+## Steps to be followed:
+
+### Step 1: Set our TensorFlow1 Directory.
+We will create a new folder directly in local disk C: and name it as “tensorflow1,” and then we will download the TensorFlow Object Detection API repository from GitHub (https://github.com/tensorflow/models). This “tensorflow1” will be our primary working directory, which will contain all the necessary files for our object detection framework.
+After downloading the whole repository, we will extract it to our tensorflow1 folder and rename the “models-master” folder to “models.”
+
+After that, we will download the EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10. We will copy all the folders and files from this repository and replace them in our object detection folder: C:\tensorflow1\models\research\object_detection. 
