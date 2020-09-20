@@ -43,3 +43,42 @@ C:\> activate tensorflow1
 ```
 (tensorflow1) C:\>python -m pip install --upgrade pip
 ```
+
+Now we will install TensorFlow
+
+```
+(tensorflow1) C:\> pip install --ignore-installed --upgrade tensorflow
+```
+
+After this, we will install the necessary packages of python:
+
+```
+(tensorflow1) C:\> conda install -c anaconda protobuf
+(tensorflow1) C:\> pip install pillow
+(tensorflow1) C:\> pip install lxml
+(tensorflow1) C:\> pip install jupyter
+(tensorflow1) C:\> pip install matplotlib
+(tensorflow1) C:\> pip install pandas
+(tensorflow1) C:\> pip install opencv-python
+```
+
+After this, we will Configure the PYTHONPATH environment variable. PYTHONPATH is an environment variable. The PYTHONPATH variable has a value that is a string with a list of directories that Python should add to our directory.
+
+```
+(tensorflow1) C:\> set PYTHONPATH=C:\tensorflow1\models;C:\tensorflow1\models\research;C:\tensorflow1\models\research\slim
+```
+ Next, we need to compile the Protobuf scripts, which TensorFlow uses to configure parameters for our model and for training it. This generates the name_pb2.py file in the \object detection\protos folder from every name.proto file. But for this first, we will change the directory.
+ 
+ ```
+ (tensorflow1) C:\> cd C:\tensorflow1\models\research
+ ```
+ 
+ And then run the following command
+ 
+ ```
+ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto .\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto .\object_detection\protos\calibration.proto .\object_detection\protos\flexible_grid_anchor_generator.proto
+ ```
+ 
+ Now finally, we will run the following to commands from the C:\tensorflow1\models\research.  The build command is used for putting all the files to install into the build directory.
+ 
+ The TensorFlow Object Detection API is now fully configured to use pre-trained object detection models or train new models.
