@@ -24,3 +24,12 @@ We will create a new folder directly in local disk C: and name it as “tensorfl
 After downloading the whole repository, we will extract it to our tensorflow1 folder and rename the “models-master” folder to “models.”
 
 After that, we will download the EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10. We will copy all the folders and files from this repository and replace them in our object detection folder: C:\tensorflow1\models\research\object_detection. 
+
+### Step 2: Create an Anaconda Virtual Environment.
+Check the Anaconda Prompt utility from the Start menu in Windows, right-click on it and click “Run as Administrator.” 
+If you are asked by Windows if you want to allow it to make improvements to your device, please press Yes.
+In the Anaconda prompt, create a new virtual environment named “tensorflow1.”
+```C:\> conda create -n tensorflow1 pip python=3.6```
+Then we will activate this virtual environment.
+```C:\> activate tensorflow1
+(tensorflow1) C:\>python -m pip install --upgrade pip```
