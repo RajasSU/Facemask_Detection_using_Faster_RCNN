@@ -29,6 +29,7 @@ After that, we will download the EdjeElectronics/TensorFlow-Object-Detection-API
 Check the Anaconda Prompt utility from the Start menu in Windows, right-click on it and click “Run as Administrator.” 
 If you are asked by Windows if you want to allow it to make improvements to your device, please press Yes.
 In the Anaconda prompt, create a new virtual environment named “tensorflow1.”
+
 ```C:\> conda create -n tensorflow1 pip python=3.6```
 
 Then we will activate this virtual environment.
