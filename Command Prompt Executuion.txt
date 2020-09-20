@@ -1,0 +1,177 @@
+
+(base) C:\WINDOWS\system32>conda activate tensorflow1
+
+(tensorflow1) C:\WINDOWS\system32>cd C:\tensorflow1\models\research\object_detection
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python
+Python 3.6.12 |Anaconda, Inc.| (default, Sep  9 2020, 00:29:25) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+Traceback (most recent call last):
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\python\pywrap_tensorflow.py", line 64, in <module>
+    from tensorflow.python._pywrap_tensorflow_internal import *
+ImportError: DLL load failed: The specified module could not be found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\__init__.py", line 41, in <module>
+    from tensorflow.python.tools import module_util as _module_util
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\python\__init__.py", line 40, in <module>
+    from tensorflow.python.eager import context
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\python\eager\context.py", line 35, in <module>
+    from tensorflow.python import pywrap_tfe
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\python\pywrap_tfe.py", line 28, in <module>
+    from tensorflow.python import pywrap_tensorflow
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\python\pywrap_tensorflow.py", line 83, in <module>
+    raise ImportError(msg)
+ImportError: Traceback (most recent call last):
+  File "C:\Users\CSUFTitan\anaconda3\envs\tensorflow1\lib\site-packages\tensorflow\python\pywrap_tensorflow.py", line 64, in <module>
+    from tensorflow.python._pywrap_tensorflow_internal import *
+ImportError: DLL load failed: The specified module could not be found.
+
+
+Failed to load the native TensorFlow runtime.
+
+See https://www.tensorflow.org/install/errors
+
+for some common reasons and solutions.  Include the entire stack trace
+above this error message when asking for help.
+>>> exit()
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python3
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>pip install tensorflow==1.15.0
+Collecting tensorflow==1.15.0
+  Downloading tensorflow-1.15.0-cp36-cp36m-win_amd64.whl (295.1 MB)
+     |████████████████████████████████| 295.1 MB 6.6 kB/s
+Requirement already satisfied: numpy<2.0,>=1.16.0 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (1.18.5)
+Collecting astor>=0.6.0
+  Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Collecting gast==0.2.2
+  Downloading gast-0.2.2.tar.gz (10 kB)
+Requirement already satisfied: grpcio>=1.8.6 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (1.32.0)
+Requirement already satisfied: google-pasta>=0.1.6 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (0.2.0)
+Requirement already satisfied: keras-preprocessing>=1.0.5 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (1.1.2)
+Requirement already satisfied: six>=1.10.0 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (1.15.0)
+Collecting tensorboard<1.16.0,>=1.15.0
+  Downloading tensorboard-1.15.0-py3-none-any.whl (3.8 MB)
+     |████████████████████████████████| 3.8 MB 726 kB/s
+Collecting tensorflow-estimator==1.15.1
+  Downloading tensorflow_estimator-1.15.1-py2.py3-none-any.whl (503 kB)
+     |████████████████████████████████| 503 kB 3.3 MB/s
+Requirement already satisfied: termcolor>=1.1.0 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (1.1.0)
+Requirement already satisfied: wheel>=0.26 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (0.35.1)
+Collecting keras-applications>=1.0.8
+  Downloading Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+     |████████████████████████████████| 50 kB 3.2 MB/s
+Requirement already satisfied: absl-py>=0.7.0 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (0.10.0)
+Requirement already satisfied: wrapt>=1.11.1 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (1.12.1)
+Requirement already satisfied: opt-einsum>=2.3.2 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (3.3.0)
+Requirement already satisfied: protobuf>=3.6.1 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorflow==1.15.0) (3.13.0)
+Requirement already satisfied: setuptools>=41.0.0 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.0) (50.3.0)
+Requirement already satisfied: markdown>=2.6.8 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.0) (3.2.2)
+Requirement already satisfied: werkzeug>=0.11.15 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.0) (1.0.1)
+Requirement already satisfied: h5py in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from keras-applications>=1.0.8->tensorflow==1.15.0) (2.10.0)
+Requirement already satisfied: importlib-metadata; python_version < "3.8" in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from markdown>=2.6.8->tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.0) (1.7.0)
+Requirement already satisfied: zipp>=0.5 in c:\users\csuftitan\anaconda3\envs\tensorflow1\lib\site-packages (from importlib-metadata; python_version < "3.8"->markdown>=2.6.8->tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.0) (3.1.0)
+Building wheels for collected packages: gast
+  Building wheel for gast (setup.py) ... done
+  Created wheel for gast: filename=gast-0.2.2-py3-none-any.whl size=7548 sha256=e3cf1482edb0525e2f1f81cc0d5a3597cf471d5aeb7efdac2694e7e063198b48
+  Stored in directory: c:\users\csuftitan\appdata\local\pip\cache\wheels\19\a7\b9\0740c7a3a7d1d348f04823339274b90de25fbcd217b2ee1fbe
+Successfully built gast
+Installing collected packages: astor, gast, tensorboard, tensorflow-estimator, keras-applications, tensorflow
+  Attempting uninstall: gast
+    Found existing installation: gast 0.3.3
+    Uninstalling gast-0.3.3:
+      Successfully uninstalled gast-0.3.3
+  Attempting uninstall: tensorboard
+    Found existing installation: tensorboard 2.3.0
+    Uninstalling tensorboard-2.3.0:
+      Successfully uninstalled tensorboard-2.3.0
+ERROR: After October 2020 you may experience errors when installing or updating packages. This is because pip will change the way that it resolves dependency conflicts.
+
+We recommend you use --use-feature=2020-resolver to test your packages with the new resolver before it becomes the default.
+
+tensorflow-gpu 2.3.0 requires gast==0.3.3, but you'll have gast 0.2.2 which is incompatible.
+tensorflow-gpu 2.3.0 requires tensorboard<3,>=2.3.0, but you'll have tensorboard 1.15.0 which is incompatible.
+Successfully installed astor-0.8.1 gast-0.2.2 keras-applications-1.0.8 tensorboard-1.15.0 tensorflow-1.15.0 tensorflow-estimator-1.15.1
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python
+Python 3.6.12 |Anaconda, Inc.| (default, Sep  9 2020, 00:29:25) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+2020-09-14 13:21:38.522454: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_100.dll'; dlerror: cudart64_100.dll not found
+2020-09-14 13:21:38.522838: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+>>> exit()
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python xml_to_csv.py
+Successfully converted xml to csv.
+Successfully converted xml to csv.
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
+2020-09-14 13:27:05.643134: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_100.dll'; dlerror: cudart64_100.dll not found
+2020-09-14 13:27:05.643396: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+WARNING:tensorflow:From generate_tfrecord.py:103: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+WARNING:tensorflow:From generate_tfrecord.py:89: The name tf.python_io.TFRecordWriter is deprecated. Please use tf.io.TFRecordWriter instead.
+
+W0914 13:27:08.207574 12364 module_wrapper.py:139] From generate_tfrecord.py:89: The name tf.python_io.TFRecordWriter is deprecated. Please use tf.io.TFRecordWriter instead.
+
+WARNING:tensorflow:From generate_tfrecord.py:48: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+W0914 13:27:08.516746 12364 module_wrapper.py:139] From generate_tfrecord.py:48: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+Successfully created the TFRecords: C:\tensorflow1\models\research\object_detection\train.record
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
+2020-09-14 13:31:10.314442: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_100.dll'; dlerror: cudart64_100.dll not found
+2020-09-14 13:31:10.314563: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+WARNING:tensorflow:From generate_tfrecord.py:103: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+WARNING:tensorflow:From generate_tfrecord.py:89: The name tf.python_io.TFRecordWriter is deprecated. Please use tf.io.TFRecordWriter instead.
+
+W0914 13:31:13.860470  4984 module_wrapper.py:139] From generate_tfrecord.py:89: The name tf.python_io.TFRecordWriter is deprecated. Please use tf.io.TFRecordWriter instead.
+
+WARNING:tensorflow:From generate_tfrecord.py:48: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+W0914 13:31:13.889393  4984 module_wrapper.py:139] From generate_tfrecord.py:48: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+Successfully created the TFRecords: C:\tensorflow1\models\research\object_detection\test.record
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python
+Python 3.6.12 |Anaconda, Inc.| (default, Sep  9 2020, 00:29:25) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'cv'
+>>> import cv2
+>>> exit()
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>Object_detection_image.py
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>python Object_detection_image.py
+2020-09-14 17:12:34.015765: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_100.dll'; dlerror: cudart64_100.dll not found
+2020-09-14 17:12:34.016170: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+WARNING:tensorflow:From Object_detection_image.py:64: The name tf.GraphDef is deprecated. Please use tf.compat.v1.GraphDef instead.
+
+WARNING:tensorflow:From Object_detection_image.py:65: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+WARNING:tensorflow:From Object_detection_image.py:70: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-09-14 17:12:43.475866: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2020-09-14 17:12:43.477168: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2020-09-14 17:12:43.485776: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: TGS1
+2020-09-14 17:12:43.485985: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: TGS1
+2020-09-14 17:12:43.492204: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-09-14 17:12:50.868196: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 34560000 exceeds 10% of system memory.
+2020-09-14 17:12:50.961492: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 34560000 exceeds 10% of system memory.
+2020-09-14 17:12:50.994613: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 34560000 exceeds 10% of system memory.
+2020-09-14 17:12:51.050661: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 34560000 exceeds 10% of system memory.
+2020-09-14 17:12:51.622133: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 240844800 exceeds 10% of system memory.
+
+(tensorflow1) C:\tensorflow1\models\research\object_detection>
