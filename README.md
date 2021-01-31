@@ -1,4 +1,4 @@
-# Facemask_Detection_using_Faster_RCNN
+# Facemask Detection using Faster RCNN
 Technologies used: Python, Pandas, TensorFlow, Keras, OpenCV.
 
 ## Problem Description
